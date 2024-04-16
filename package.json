@@ -1,0 +1,23 @@
+{
+  "name": "vangopvp-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "author": "EnderSlain456",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.2",
+    "minecraft-server-util": "^5.4.4",
+    "nodemon": "^3.1.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
