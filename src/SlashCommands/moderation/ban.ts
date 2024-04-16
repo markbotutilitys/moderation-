@@ -10,11 +10,16 @@ module.exports = {
 	async execute(interaction: CommandInteraction) {
         const user = interaction.options.getUser('user');
         const reason = interaction.options.get('reason')?.value || 'No reason provided';
-        const banEmbed = new EmbedBuilder()
-            .setColor('#74F58F')
-            .setTitle('Ban Command')
-            .setAuthor({ name: interaction.user.username , iconURL: interaction.user.displayAvatarURL()})
-            .setDescription(`🔨 | ${user?.username} has been banned for: **${reason}**`)
-        await interaction.reply({ embeds: [banEmbed] })
+        const embed = new EmbedBuilder()
+			.setAuthor({ name: user?.username + ' has been kicked from the server.', iconURL: user?.displayAvatarURL()})
+			.setThumbnail(interaction.guild!.iconURL({ extension: 'png' }))
+			.addFields(
+                { name: `Member`,value: `${user?.username}`, inline: true },
+                { name: `Reason`,value: `${reason}`, inline: true },
+                { name: `Date`,value: `${Date.now().toLocaleString()}`, inline: false },
+            )
+
+		return interaction.channel?.send({ embeds: [embed] })
+    
 	}
 }

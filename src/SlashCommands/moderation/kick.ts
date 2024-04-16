@@ -15,7 +15,7 @@ module.exports = {
 			.setThumbnail(interaction.guild!.iconURL({ extension: 'png' }))
 			.addFields(
                 { name: `Member`,value: `${user?.username}`, inline: true },
-                { name: `Reason`,value: `${user?.username}`, inline: true },
+                { name: `Reason`,value: `${reason}`, inline: true },
                 { name: `Date`,value: `${Date.now().toLocaleString()}`, inline: false },
             )
 
