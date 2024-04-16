@@ -10,7 +10,7 @@ module.exports = {
 		const pingEmbed = new EmbedBuilder()
 			.setColor('#74F58F')
 			.setTitle('Ping Command')
-			.setAuthor({ name: 'VangoPvP Bot' })
+			.setAuthor({ name: 'Miek's Moderation})
 			.setDescription(`🏓 | Latency is: **${Date.now() - interaction.createdTimestamp}ms.**`)
 
 		await interaction.reply({ embeds: [pingEmbed] })
